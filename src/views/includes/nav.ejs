@@ -1,0 +1,13 @@
+<nav class="nave">
+    <h3><a href="http://localhost:3000/">Agenda</a></h3>
+   <div>
+        <a href="http://localhost:3000/login/index">login</a>
+        <% if(user ) { %>
+            <form action="/login/logout" method="post" style="display: inline;">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <input type="submit" value="Sair" class="sair" >
+            </form>
+        <% } %>
+        <a href="/contatos/index">Cadastrar contatos</a>
+    </div>
+</nav>

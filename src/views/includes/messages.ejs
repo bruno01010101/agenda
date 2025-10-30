@@ -1,0 +1,15 @@
+<%if (errors.length > 0) {%>
+    <div class="flash-message danger">
+        <% errors.forEach(errors =>{ %>
+            <%= errors %> <br>
+        <% });%>
+    </div>
+<% } %>
+
+<%if (success.length > 0) {%>
+    <div class="flash-message success">
+        <% success.forEach(success =>{ %>
+            <%= success %> <br>
+        <% });%>
+    </div>
+<% } %>

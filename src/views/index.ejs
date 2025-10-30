@@ -1,0 +1,26 @@
+<%- include('includes/head') %>
+<%- include('includes/nav') %>
+<main>
+    <h1>Agenda</h1>
+    <p>Seus contatos estão abaixo</p>
+    <%- include('includes/messages'); %>
+
+    <div id="contatos">
+        <% contatos.forEach(cont => { %>
+            <div class="contatos">
+                <div class="nome"><%= cont.nome %></div>
+                <div class="sobrenome"><%= cont.sobrenome %></div>
+                <div class="email"><%= cont.email %></div>
+                <div class="numero"><%= cont.telefone %></div>
+                <div class="botao"><a href="/contato/index/<%=cont._id%>">Editar</a></div>
+                <div class="botao-exl"><form action="/contatos/delete/<%= cont._id %>" method="POST"     style="display:inline; background-color: none; all:unset ;">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <button>Excluir</button>
+                </form>
+                </div>
+            </div>
+            </div>
+        <% }); %>
+    </div>
+</main>
+<%- include('includes/footer') %>
