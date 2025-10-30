@@ -1,7 +1,7 @@
 <nav class="nave">
-    <h3><a href="http://localhost:3000/">Agenda</a></h3>
+    <h3><a href="/">Agenda</a></h3>
    <div>
-        <a href="http://localhost:3000/login/index">login</a>
+        <a href="/login/index">login</a>
         <% if(user ) { %>
             <form action="/login/logout" method="post" style="display: inline;">
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
